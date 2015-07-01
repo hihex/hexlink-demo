@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hihex_sbrc_you_are_paying_for">You are paying for</string>
+    <string name="hihex_sbrc_please_continue_payment_on_your_phone">Please continue payment on your phone</string>
+    <string name="hihex_sbrc_payment_successful">Payment Successful</string>
+    <string name="hihex_sbrc_payment_failed">Payment Failed</string>
+    <string name="hihex_sbrc_payment_please_try_again_later">Please try again later</string>
+    <string name="hihex_sbrc_payment_waiting_for_confirmation">Waiting for Confirmation</string>
+    <string name="hihex_sbrc_click_complete_payment_to_retry">Please select and click “Complete” to finish the payment (make sure your phone is connected to this TV).</string>
+    <string name="hihex_sbrc_complete_payment">Complete</string>
+    <string name="hihex_sbrc_checking_payment_status">Checking Payment Status…</string>
+</resources>

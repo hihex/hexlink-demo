@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="hihex_sbrc_payment_button" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:background">@drawable/hihex_sbrc_button</item>
+        <item name="android:textColor">@color/hihex_sbrc_button_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
+</resources>

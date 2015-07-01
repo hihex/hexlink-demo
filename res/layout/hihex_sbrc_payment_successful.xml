@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="609dp"
+    android:layout_height="341dp"
+    android:layout_gravity="center"
+    android:background="@drawable/hihex_sbrc_payment_bg" >
+
+    <View
+        android:id="@+id/hihex_sbrc_payment_success_icon"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/hihex_sbrc_success" />
+
+    <TextView
+        android:id="@id/hihex_sbrc_payment_subject"
+        android:layout_below="@id/hihex_sbrc_payment_success_icon"
+        android:layout_alignLeft="@id/hihex_sbrc_payment_success_icon"
+        android:layout_alignStart="@id/hihex_sbrc_payment_success_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="@android:string/unknownName"
+        android:textColor="#222222"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@id/hihex_sbrc_payment_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/hihex_sbrc_payment_subject"
+        android:layout_alignStart="@id/hihex_sbrc_payment_subject"
+        android:layout_below="@id/hihex_sbrc_payment_subject"
+        android:layout_marginTop="0dp"
+        android:text="@android:string/VideoView_error_text_invalid_progressive_playback"
+        android:textColor="#666666"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@id/hihex_sbrc_payment_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/hihex_sbrc_payment_detail"
+        android:layout_alignStart="@id/hihex_sbrc_payment_detail"
+        android:layout_below="@id/hihex_sbrc_payment_detail"
+        android:layout_marginTop="8dp"
+        android:text="¥6.00"
+        android:textColor="#222222"
+        android:textSize="25sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/hihex_sbrc_payment_success_icon"
+        android:layout_marginLeft="9dp"
+        android:layout_marginStart="9dp"
+        android:layout_toEndOf="@id/hihex_sbrc_payment_success_icon"
+        android:layout_toRightOf="@id/hihex_sbrc_payment_success_icon"
+        android:text="@string/hihex_sbrc_payment_successful"
+        android:textColor="#22b6f4"
+        android:textSize="32sp" />
+
+    <Button
+        style="@style/hihex_sbrc_payment_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:text="@android:string/ok"
+        android:onClick="closeDialog"><requestFocus/></Button>
+
+</RelativeLayout>

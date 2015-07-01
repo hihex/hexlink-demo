@@ -26,4 +26,5 @@
 -keep class hihex.sbrc.client.InstallProgress { *; }
 -keep class hihex.sbrc.Identity { *; }
 -keep class hihex.sbrc.client.AppInfo { *; }
+-keep class hihex.sbrc.InputTextInfo { *; }
 -keep enum hihex.sbrc.client.MediaStatus { *; }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="609dp"
+    android:layout_height="341dp"
+    android:layout_gravity="center"
+    android:background="@drawable/hihex_sbrc_payment_bg" >
+
+    <View
+        android:id="@+id/hihex_sbrc_payment_failed_icon"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/hihex_sbrc_failed" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hihex_sbrc_payment_failed_icon"
+        android:layout_alignStart="@+id/hihex_sbrc_payment_failed_icon"
+        android:layout_below="@+id/hihex_sbrc_payment_failed_icon"
+        android:layout_marginTop="11dp"
+        android:text="@string/hihex_sbrc_payment_please_try_again_later"
+        android:textColor="#666666"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/hihex_sbrc_payment_failed_icon"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/hihex_sbrc_payment_failed_icon"
+        android:layout_toRightOf="@+id/hihex_sbrc_payment_failed_icon"
+        android:text="@string/hihex_sbrc_payment_failed"
+        android:textColor="#d73838"
+        android:textSize="32sp" />
+
+    <Button
+        style="@style/hihex_sbrc_payment_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:text="@android:string/ok"
+        android:onClick="closeDialog"><requestFocus/></Button>
+
+</RelativeLayout>

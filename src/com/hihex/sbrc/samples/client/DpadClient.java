@@ -34,7 +34,14 @@ public class DpadClient extends StandardClient {
 
     @Override
     public void onConnect(final Identity identity) {
-        Toast.makeText(mContext, "device onConnect:"+identity, Toast.LENGTH_SHORT).show();
+        mContext.runOnUiThread(new Runnable(){
+
+            @Override
+            public void run() {
+                Toast.makeText(mContext, "device onConnect:"+identity, Toast.LENGTH_SHORT).show();                
+            }
+            
+        });
         if(identity==null){
             return;
         }
@@ -44,6 +51,13 @@ public class DpadClient extends StandardClient {
     @Override
     public void onDisconnect(final Identity identity, final DisconnectReason reason) {
         super.onDisconnect(identity, reason);
-        Toast.makeText(mContext, "device onDisconnect:"+identity+" reason:"+reason, Toast.LENGTH_SHORT).show();
+        mContext.runOnUiThread(new Runnable(){
+
+            @Override
+            public void run() {
+                Toast.makeText(mContext, "device onConnect:"+identity, Toast.LENGTH_SHORT).show();                
+            }
+            
+        });
     }
 }

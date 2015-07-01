@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hihex_sbrc_you_are_paying_for">你正在购买</string>
+    <string name="hihex_sbrc_please_continue_payment_on_your_phone">请在手机完成支付</string>
+    <string name="hihex_sbrc_payment_successful">支付成功</string>
+    <string name="hihex_sbrc_payment_failed">支付失败</string>
+    <string name="hihex_sbrc_payment_please_try_again_later">本次购买失败，请重新购买</string>
+    <string name="hihex_sbrc_payment_waiting_for_confirmation">等待确认支付</string>
+    <string name="hihex_sbrc_click_complete_payment_to_retry">在手机上完成支付后，再点击 “支付完成” 即可 (点击前请确认手机已连接电视)。</string>
+    <string name="hihex_sbrc_complete_payment">完成支付</string>
+    <string name="hihex_sbrc_checking_payment_status">正在检查支付状态…</string>
+</resources>
