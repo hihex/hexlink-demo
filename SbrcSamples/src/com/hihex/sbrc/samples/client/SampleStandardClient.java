@@ -33,10 +33,11 @@ public class SampleStandardClient extends StandardClient {
     private static final Random mRng = new Random();
 
     public SampleStandardClient(final Activity context, final FrameLayout layout) {
-        // Initialize the standard client to use the landscape mode with a 1x2 grid.
-        super(/*rows*/1, /*columns*/2, /*isLandscape*/true);
+        // Initialize the standard client to use the landscape mode with a 1x2
+        // grid.
+        super(/* rows */1, /* columns */2, /* isLandscape */true);
         // Use joystick on the left, and D-pad on the right.
-        setModules(new Module[] {createJoystickModule(), createDpadModule()});
+        setModules(new Module[] { createJoystickModule(), createDpadModule() });
         captureSwipeFromBottom();
 
         // The rest are to set up the Android views.
@@ -44,7 +45,8 @@ public class SampleStandardClient extends StandardClient {
         mContext = context;
         mChild = new TextView(context);
 
-        final int color = Color.HSVToColor(new float[] {mRng.nextFloat() * 360, 1, 1});
+        final int color = Color.HSVToColor(new float[] {
+                mRng.nextFloat() * 360, 1, 1 });
         mChild.setBackgroundColor(color);
         mChild.setTextColor(Color.BLACK);
         mChild.setTextSize(20);
@@ -58,34 +60,35 @@ public class SampleStandardClient extends StandardClient {
     private final Module createJoystickModule() {
         return new JoystickModule() {
             @Override
-            protected void onJoystickEvent(final PanState state, final float relX, final float relY) {
+            protected void onJoystickEvent(final PanState state,
+                    final float relX, final float relY) {
                 // Set the actions to do when we receive a joystick event:
 
                 mContext.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         switch (state) {
-                        case kBegin:
-                            // On begin, set the label to have white text.
-                            mChild.setTextColor(Color.WHITE);
-                            mHandler.startMoving();
-                            break;
+                            case kBegin:
+                                // On begin, set the label to have white text.
+                                mChild.setTextColor(Color.WHITE);
+                                mHandler.startMoving();
+                                break;
 
-                        case kEnd:
-                        case kCanceled:
-                        case kUnknown:
-                            // On end, revert the label to black text.
-                            mChild.setTextColor(Color.BLACK);
-                            mHandler.stopMoving();
-                            break;
+                            case kEnd:
+                            case kCanceled:
+                            case kUnknown:
+                                // On end, revert the label to black text.
+                                mChild.setTextColor(Color.BLACK);
+                                mHandler.stopMoving();
+                                break;
 
-                        case kMove:
-                            // While moving, change the velocity.
-                            updateText();
-                            mHandler.velocityX = relX * 0.1;
-                            mHandler.velocityY = relY * 0.1;
-                            Log.e("SBRC", ":" + relX + "," + relY);
-                            break;
+                            case kMove:
+                                // While moving, change the velocity.
+                                updateText();
+                                mHandler.velocityX = relX * 0.1;
+                                mHandler.velocityY = relY * 0.1;
+                                Log.e("SBRC", ":" + relX + "," + relY);
+                                break;
                         }
                     }
                 });
@@ -104,26 +107,26 @@ public class SampleStandardClient extends StandardClient {
                 final String commandString;
 
                 switch (command) {
-                case kClick:
-                    commandString = "\u25cb";
-                    break;
-                case kLongPress:
-                    commandString = "\u25cf";
-                    break;
-                case kLeft:
-                    commandString = "\u2190";
-                    break;
-                case kRight:
-                    commandString = "\u2192";
-                    break;
-                case kUp:
-                    commandString = "\u2191";
-                    break;
-                case kDown:
-                    commandString = "\u2193";
-                    break;
-                default:
-                    commandString = "?";
+                    case kClick:
+                        commandString = "\u25cb";
+                        break;
+                    case kLongPress:
+                        commandString = "\u25cf";
+                        break;
+                    case kLeft:
+                        commandString = "\u2190";
+                        break;
+                    case kRight:
+                        commandString = "\u2192";
+                        break;
+                    case kUp:
+                        commandString = "\u2191";
+                        break;
+                    case kDown:
+                        commandString = "\u2193";
+                        break;
+                    default:
+                        commandString = "?";
                 }
 
                 mSeq = newString + commandString;
@@ -165,7 +168,8 @@ public class SampleStandardClient extends StandardClient {
     }
 
     @Override
-    public void onDisconnect(final Identity identity, final DisconnectReason reason) {
+    public void onDisconnect(final Identity identity,
+            final DisconnectReason reason) {
         super.onDisconnect(identity, reason);
 
         mContext.runOnUiThread(new Runnable() {
@@ -178,7 +182,8 @@ public class SampleStandardClient extends StandardClient {
     }
 
     private void updateText() {
-        mChild.setText("(" + (int) mHandler.velocityX + ", " + (int) mHandler.velocityY + ")\n" + mSeq);
+        mChild.setText("(" + (int) mHandler.velocityX + ", "
+                + (int) mHandler.velocityY + ")\n" + mSeq);
     }
 }
 

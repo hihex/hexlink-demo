@@ -1,9 +1,5 @@
 package com.hihex.sbrc.samples;
 
-import com.hihex.sbrc.samples.client.DpadClient;
-
-import hihex.sbrc.Client;
-import hihex.sbrc.ClientFactory;
 import hihex.sbrc.SbrcManager;
 import hihex.sbrc.android.RemoteTextInputMonitor;
 import android.app.Activity;
@@ -14,17 +10,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends Activity{
-    EditText editText1,editText2;
+public class MainActivity extends Activity {
+    EditText editText1, editText2;
     Activity self;
     SbrcManager manager;
     MyApplication appState;
+
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        self=this;
+        self = this;
         setContentView(R.layout.main);
-        appState = ((MyApplication)this.getApplication());
+        appState = ((MyApplication) this.getApplication());
         appState.initActivity(self);
         // SBRC Specific: Initialize the server on start.
         initGame();
@@ -48,23 +45,24 @@ public class MainActivity extends Activity{
 
     private void initGame() {
 
-        manager=appState.getSbrcManager();
+        manager = appState.getSbrcManager();
         // Let the clients know our game.
-        editText1=(EditText) this.findViewById(R.id.editText1);
-        editText2=(EditText) this.findViewById(R.id.editText2);
+        editText1 = (EditText) this.findViewById(R.id.editText1);
+        editText2 = (EditText) this.findViewById(R.id.editText2);
         RemoteTextInputMonitor.attach(manager, editText1);
         RemoteTextInputMonitor.attach(manager, editText2);
 
-        final Button button=(Button) findViewById(R.id.button_ok);
+        final Button button = (Button) findViewById(R.id.button_ok);
         button.requestFocus();
     }
 
     public void onClickButton(View v) {
         if (v instanceof Button) {
-            Toast.makeText(this, ((Button) v).getText(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, ((Button) v).getText(), Toast.LENGTH_SHORT)
+                    .show();
         }
-        if(v.getId()==R.id.button_ok){
-            Intent intent=new Intent(this,SecondaryActivity.class);
+        if (v.getId() == R.id.button_ok) {
+            Intent intent = new Intent(this, SecondaryActivity.class);
             startActivity(intent);
         }
     }
