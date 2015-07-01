@@ -1,1 +1,1 @@
-include ':HelloSbrcActivity'
+include ':HelloSbrcActivity', ':HelloLibGdx'
