@@ -10,19 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
     EditText editText1, editText2;
     Activity self;
-    SbrcManager manager;
-    MyApplication appState;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         self = this;
         setContentView(R.layout.main);
-        appState = ((MyApplication) this.getApplication());
-        appState.initActivity(self);
         // SBRC Specific: Initialize the server on start.
         initGame();
     }
@@ -44,8 +40,6 @@ public class MainActivity extends Activity {
     }
 
     private void initGame() {
-
-        manager = appState.getSbrcManager();
         // Let the clients know our game.
         editText1 = (EditText) this.findViewById(R.id.editText1);
         editText2 = (EditText) this.findViewById(R.id.editText2);

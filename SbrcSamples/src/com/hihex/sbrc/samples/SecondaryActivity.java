@@ -5,9 +5,8 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class SecondaryActivity extends Activity {
+public class SecondaryActivity extends BaseActivity {
     Activity self;
-    MyApplication appState;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
