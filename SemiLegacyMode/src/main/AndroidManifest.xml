@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="hihex.sbrc_samples.semi_legacy_mode">
+    <application android:name="SemiLegacyApplication" android:label="Hello SBRC" android:icon="@android:mipmap/sym_def_app_icon" android:allowBackup="false">
+        <activity android:name="SemiLegacyActivity1" android:label="Semi-Legacy Mode 1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="SemiLegacyActivity2" android:label="Semi-Legacy Mode 2"/>
+    </application>
+</manifest>

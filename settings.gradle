@@ -1,1 +1,1 @@
-include ':HelloSbrcActivity', ':HelloLibGdx'
+include ':HelloSbrcActivity', ':HelloLibGdx', ':SemiLegacyMode'
