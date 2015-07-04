@@ -42,6 +42,21 @@
         </activity>
 
         <service
+            android:name=".DummyService"
+            android:exported="false" >
+        </service>
+        
+        <receiver android:name=".BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.duokan.duokanplayer.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        
+        <service
             android:name="hihex.sbrc.miniservices.SbrcService"
             android:exported="false" >
             <intent-filter>

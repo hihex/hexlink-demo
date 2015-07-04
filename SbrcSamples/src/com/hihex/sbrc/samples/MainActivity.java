@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends BaseActivity {
+    private SbrcManager mSbrcManager;
+
     EditText editText1, editText2;
     Activity self;
 
@@ -19,11 +21,13 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         self = this;
         setContentView(R.layout.main);
-        // SBRC Specific: Initialize the server on start.
+
+        final MyApplication app = (MyApplication) getApplication();
+        mSbrcManager = app.getSbrcManager();
+
         initGame();
     }
 
-    // SBRC Specific: Terminate the server on stop.
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -43,20 +47,20 @@ public class MainActivity extends BaseActivity {
         // Let the clients know our game.
         editText1 = (EditText) this.findViewById(R.id.editText1);
         editText2 = (EditText) this.findViewById(R.id.editText2);
-        RemoteTextInputMonitor.attach(manager, editText1);
-        RemoteTextInputMonitor.attach(manager, editText2);
+        RemoteTextInputMonitor.attach(mSbrcManager, editText1);
+        RemoteTextInputMonitor.attach(mSbrcManager, editText2);
 
         final Button button = (Button) findViewById(R.id.button_ok);
         button.requestFocus();
     }
 
-    public void onClickButton(View v) {
+    public void onClickButton(final View v) {
         if (v instanceof Button) {
             Toast.makeText(this, ((Button) v).getText(), Toast.LENGTH_SHORT)
-                    .show();
+            .show();
         }
         if (v.getId() == R.id.button_ok) {
-            Intent intent = new Intent(this, SecondaryActivity.class);
+            final Intent intent = new Intent(this, SecondaryActivity.class);
             startActivity(intent);
         }
     }
