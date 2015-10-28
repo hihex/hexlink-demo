@@ -27,7 +27,7 @@
         android:layout_alignBottom="@+id/editText"
         android:layout_toRightOf="@+id/editText"
         android:layout_toEndOf="@+id/editText"
-        android:src="@drawable/hihex_sbrc_success"
+        android:src="@drawable/hihex_sbrc_phone"
         android:onClick="startActivity1"/>
 
     <EditText

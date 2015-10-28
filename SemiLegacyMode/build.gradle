@@ -2,24 +2,24 @@ apply plugin: 'com.android.application'
 
 repositories {
     maven {
-        url 'http://dev.hihex.com/maven'
+        url 'http://dl.hihex.com/sdk/maven'
     }
 }
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '22.0.1'
+    compileSdkVersion 23
+    buildToolsVersion '23.0.1'
 
     defaultConfig {
         applicationId 'hihex.sbrc_samples.semi_legacy_mode'
-        minSdkVersion 16
-        targetSdkVersion 19
+        minSdkVersion 15
+        targetSdkVersion 23
         versionCode 1
         versionName '1.0'
     }
 }
 
 dependencies {
-    compile 'hihex.sbrc:sbrc:1.6.2@aar'
+    compile 'hihex.sbrc:sbrc:1.6.8.1350@aar'
 }
 
